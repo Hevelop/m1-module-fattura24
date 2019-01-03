@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    
+    <modules>
+        <Fattura24_AppFatturazione>
+            <version>1.9.13</version>
+        </Fattura24_AppFatturazione>
+    </modules>
+    
+    <global>
+        
+        <helpers>
+            <appfatturazione>
+                <class>Fattura24_AppFatturazione_Helper</class>
+            </appfatturazione>
+        </helpers>
+        
+        <blocks>
+            
+            <appfatturazione>
+                <class>Fattura24_AppFatturazione_Block</class>
+            </appfatturazione>
+            
+        </blocks>
+        
+        <models>
+            
+            <appfatturazione>
+                <class>Fattura24_AppFatturazione_Model</class>
+            </appfatturazione>
+            
+        </models>
+        
+        <resources>
+            
+            <appfatturazione_setup>
+                <setup>
+                    <module>Fattura24_AppFatturazione</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </appfatturazione_setup>
+            
+            <appfatturazione_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </appfatturazione_write>
+            
+            <appfatturazione_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </appfatturazione_read>
+            
+        </resources>
+        
+        <events>
+            
+            <sales_order_place_after>
+                <observers>
+                    <appfatturazione>
+                        <class>Fattura24_AppFatturazione_Model_Observer_CreateOrderObserver</class>
+                        <method>createOrder</method>
+                        <type>singleton</type>
+                    </appfatturazione>
+                </observers>
+            </sales_order_place_after>
+            
+            <sales_order_invoice_register>
+                <observers>
+                    <appfatturazione>
+                        <class>Fattura24_AppFatturazione_Model_Observer_CreateInvoiceObserver</class>
+                        <method>createInvoice</method>
+                        <type>singleton</type>
+                    </appfatturazione>
+                </observers>
+            </sales_order_invoice_register>
+            
+        </events>
+        
+    </global>
+    
+    <frontend>
+        
+        <routers>
+            
+            <sales>
+               <args>
+                   <modules>
+                       <appfatturazione before="Mage_Sales">Fattura24_AppFatturazione</appfatturazione>
+                   </modules>
+                </args>
+            </sales>
+            
+            <appfatturazione>
+                <use>standard</use>
+                <args>
+                   <module>Fattura24_AppFatturazione</module>
+                   <frontName>fattura24</frontName>
+                </args>
+            </appfatturazione>
+            
+        </routers>
+        
+    </frontend>
+    
+    <adminhtml>
+        
+        <events>
+            
+            <adminhtml_block_html_before>
+                <observers>
+                    <appfatturazione>
+                        <class>Fattura24_AppFatturazione_Model_Observer_AddColumnsObserver</class>
+                        <method>addColumnToGrid</method>
+                    </appfatturazione>
+                </observers>
+            </adminhtml_block_html_before>
+            
+        </events>
+        
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <fattura24>
+                                            <title>Impostazioni Fattura24</title>
+                                        </fattura24>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        
+    </adminhtml>
+    
+    <admin>
+        
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<appfatturazione before="Mage_Adminhtml">Fattura24_AppFatturazione_Adminhtml</appfatturazione>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+        
+	</admin>
+    
+</config>

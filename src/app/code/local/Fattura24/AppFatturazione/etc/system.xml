@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <tab_fattura24 translate="label" module="appfatturazione">
+            <label>Fattura24</label>
+            <sort_order>1</sort_order>
+        </tab_fattura24>
+    </tabs>
+     
+    <sections>
+        <fattura24 translate="label" module="appfatturazione">
+            <label>Impostazioni</label>
+            <tab>tab_fattura24</tab>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <errori translate="label">
+                    <frontend_model>appfatturazione/adminhtml_system_config_form_FieldErrori</frontend_model>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                </errori>
+
+                <generali translate="label">
+                    <label>Impostazioni generali</label>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        
+                        <version translate="label">
+                            <label>Versione modulo</label>
+                            <frontend_model>appfatturazione/adminhtml_system_config_form_FieldVersione</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </version>
+                        
+                        <api_key translate="label">
+                            <label>Api Key</label>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </api_key>
+                        
+                        <verifica_api_key translate="label">
+                            <frontend_model>appfatturazione/adminhtml_system_config_form_FieldVerificaApiKey</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </verifica_api_key>
+                        
+                    </fields>
+                </generali>
+                
+                <rubrica translate="label">
+                    <label>Rubrica</label>
+                    <sort_order>3</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        
+                        <salva_cliente translate="label comment">
+                            <label>Salva cliente</label>
+                            <frontend_model>appfatturazione/adminhtml_system_config_form_CheckboxRubricaSalvaCliente</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Salva i dati del cliente nella rubrica di Fattura24 quando viene creato un ordine o una fattura in Magento</comment>
+                        </salva_cliente>
+                        
+                    </fields>
+                </rubrica>
+                
+                <ordini translate="label">
+                    <label>Ordini</label>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        
+                        <crea_ordine translate="label comment">
+                            <label>Crea ordine</label>
+                            <frontend_model>appfatturazione/adminhtml_system_config_form_CheckboxOrdiniCreaOrdine</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Crea l'ordine in Fattura24 quando viene creato l'ordine in Magento</comment>
+                        </crea_ordine>
+                        
+                        <invia_email translate="label comment">
+                            <label>Invia email</label>
+                            <frontend_model>appfatturazione/adminhtml_system_config_form_CheckboxOrdiniInviaEmail</frontend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Spedisci automaticamente il PDF dell'ordine al cliente via email al momento della creazione dell'ordine</comment>
+                        </invia_email>
+
+                        <movimenta_magazzino translate="label comment">
+                            <label>Movimenta magazzino</label>
+                            <frontend_model>appfatturazione/adminhtml_system_config_form_CheckboxOrdiniMovimentaMagazzino</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Attiva la movimentazione del magazzino tramite la creazione degli ordini. I prodotti in Fattura24 che hanno 
+                                lo stesso codice dei prodotti in Magento saranno impegnati</comment>
+                        </movimenta_magazzino>
+                        
+                        <modello_ordine translate="label comment">
+                            <label>Modello ordine</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>appfatturazione/system_config_source_SelectOrdiniModelloOrdine</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Seleziona il modello da usare per la creazione del PDF dell'ordine tra i tuoi modelli ordine in Fattura24. 
+                                Questo modello verrà usato se nell'ordine non è presente una destinazione.
+                                Se è selezionato 'Predefinito', sarà usato il modello impostato come modello predefinito in Fattura24. 
+                                Per visualizzare la lista, devi prima salvare la tua Api Key di Fattura24 in Magento
+                            </comment>
+                        </modello_ordine>
+
+                        <modello_ordine_accompagnatorio translate="label comment">
+                            <label>Modello ordine accompagnatorio</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>appfatturazione/system_config_source_SelectOrdiniModelloOrdine</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Seleziona il modello da usare per la creazione del PDF dell'ordine tra i tuoi modelli ordine in Fattura24. 
+                                Questo modello verrà usato se nell'ordine è presente una destinazione.
+                                Se è selezionato 'Predefinito', sarà usato il modello impostato come modello predefinito in Fattura24. 
+                                Per visualizzare la lista, devi prima salvare la tua Api Key di Fattura24 in Magento
+                            </comment>
+                        </modello_ordine_accompagnatorio>
+
+                    </fields>
+                </ordini>
+                
+                <fatture translate="label">
+                    <label>Fatture</label>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        
+                        <crea_fattura translate="label comment">
+                            <label>Crea fattura</label>
+                            <frontend_model>appfatturazione/adminhtml_system_config_form_CheckboxFattureCreaFattura</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Abilita la creazione delle fatture tramite Fattura24</comment>
+                        </crea_fattura>
+                        
+                        <invia_email translate="label comment">
+                            <label>Invia email</label>
+                            <frontend_model>appfatturazione/adminhtml_system_config_form_CheckboxFattureInviaEmail</frontend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Spedisci automaticamente il PDF della fattura al cliente via email al momento della creazione della fattura</comment>
+                        </invia_email>
+
+                        <movimenta_magazzino translate="label comment">
+                            <label>Movimenta magazzino</label>
+                            <frontend_model>appfatturazione/adminhtml_system_config_form_CheckboxFattureMovimentaMagazzino</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Attiva la movimentazione del magazzino con la creazione delle fatture. I prodotti in Fattura24 che hanno 
+                                lo stesso codice dei prodotti in Magento saranno scaricati</comment>
+                        </movimenta_magazzino>
+
+                        <modello_fattura translate="label comment">
+                            <label>Modello fattura</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>appfatturazione/system_config_source_SelectFattureModelloFattura</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Seleziona il modello da usare per la creazione del PDF della fattura tra i tuoi modelli fattura in Fattura24. 
+                                Questo modello verrà usato se nell'ordine non è presente una destinazione.
+                                Se è selezionato 'Predefinito', sarà usato il modello impostato come modello predefinito in Fattura24. 
+                                Per visualizzare la lista, devi prima salvare la tua Api Key di Fattura24 in Magento
+                            </comment>
+                        </modello_fattura>
+
+                        <modello_fattura_accompagnatoria translate="label comment">
+                            <label>Modello fattura accompagnatoria</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>appfatturazione/system_config_source_SelectFattureModelloFattura</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Seleziona il modello da usare per la creazione del PDF della fattura tra i tuoi modelli fattura in Fattura24. 
+                                Questo modello verrà usato se nell'ordine è presente una destinazione.
+                                Se è selezionato 'Predefinito', sarà usato il modello impostato come modello predefinito in Fattura24. 
+                                Per visualizzare la lista, devi prima salvare la tua Api Key di Fattura24 in Magento
+                            </comment>
+                        </modello_fattura_accompagnatoria>
+
+                        <pdc translate="label comment">
+                            <label>Piano dei conti</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>appfatturazione/system_config_source_SelectPianoDeiConti</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Puoi selezionare il conto economico da associare alle prestazioni/prodotti dei documenti tra i tuoi conti in Fattura24. 
+                                Per visualizzare la lista, devi prima salvare la tua Api Key di Fattura24 in Magento
+                            </comment>
+                        </pdc>
+                        
+                        <sezionale_ricevuta translate="label comment">
+                            <label>Sezionale ricevute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>appfatturazione/system_config_source_SelectFattureSezionaleRicevuta</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Puoi selezionare il sezionale da usare per la numerazione delle ricevute tra i sezionali attivi per le ricevute in Fattura24.
+                                Se è selezionato 'Predefinito', sarà usato il sezionale che hai impostato come predefinito in Fattura24.
+                                Per visualizzare la lista, devi prima salvare la tua Api Key di Fattura24 in Magento
+                            </comment>
+                        </sezionale_ricevuta>
+
+                        <sezionale_fattura translate="label comment">
+                            <label>Sezionale fatture</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>appfatturazione/system_config_source_SelectFattureSezionaleFattura</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                Puoi selezionare il sezionale da usare per la numerazione delle fatture tra i sezionali attivi per le fatture in Fattura24.
+                                Se è selezionato 'Predefinito', sarà usato il sezionale che hai impostato come predefinito in Fattura24.
+                                Per visualizzare la lista, devi prima salvare la tua Api Key di Fattura24 in Magento
+                            </comment>
+                        </sezionale_fattura>
+
+                        <stato_pagata translate="label comment">
+                            <label>Stato 'Pagata'</label>
+                            <frontend_model>appfatturazione/adminhtml_system_config_form_CheckboxFattureStatoPagata</frontend_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Crea la fattura direttamente nello stato 'Pagata'</comment>
+                        </stato_pagata>
+                        
+                        <disabilita_ricevute translate="label comment">
+                            <label>Disabilita creazione ricevute</label>
+                            <frontend_model>appfatturazione/adminhtml_system_config_form_CheckboxFattureDisabilitaRicevute</frontend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Crea la fattura anziché la ricevuta anche in assenza della Partita IVA del cliente</comment>
+                        </disabilita_ricevute>
+
+                    </fields>
+                </fatture>                
+            </groups>                
+        </fattura24>
+    </sections>
+</config>

@@ -1,0 +1,14 @@
+{
+  "name": "fattura24/app-fatturazione",
+  "type": "magento-module",
+  "description": "Official Magento 1 integration with fattura24.com",
+  "authors": [
+    {
+      "name": "Simone Marcato",
+      "email": "simone@hevelop.com"
+    }
+  ],
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*"
+  }
+}
