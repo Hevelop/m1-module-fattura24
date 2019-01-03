@@ -7,4 +7,3 @@ class Fattura24_AppFatturazione_Model_System_Config_Source_SelectOrdiniModelloOr
         return Mage::helper('appfatturazione')->getTemplate(true);
     }
 }
-?>

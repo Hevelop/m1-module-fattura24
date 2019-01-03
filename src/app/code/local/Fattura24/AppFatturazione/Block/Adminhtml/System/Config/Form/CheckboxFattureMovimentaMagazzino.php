@@ -7,9 +7,12 @@ class Fattura24_AppFatturazione_Block_Adminhtml_System_Config_Form_CheckboxFattu
         $checkbox_value = Mage::helper('appfatturazione')->getConfig('fattura24/fatture/movimenta_magazzino');
         $html = " <input type='hidden' name='groups[fatture][fields][movimenta_magazzino][value]' value='0'>
             <input type='checkbox' name='groups[fatture][fields][movimenta_magazzino][value]' id='fatture_movimenta_magazzino' value='1'";
-        if($checkbox_value == 1)
-            $html .= " checked";
-        $html .= ">";
+        if ($checkbox_value == 1) {
+            $html .= ' checked';
+        }
+
+        $html .= '>';
+
         return $html;
     }
 }

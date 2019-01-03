@@ -7,10 +7,12 @@ class Fattura24_AppFatturazione_Block_Adminhtml_System_Config_Form_CheckboxFattu
         $checkbox_value = Mage::helper('appfatturazione')->getConfig('fattura24/fatture/disabilita_ricevute');
         $html = " <input type='hidden' name='groups[fatture][fields][disabilita_ricevute][value]' value='0'>
             <input type='checkbox' name='groups[fatture][fields][disabilita_ricevute][value]' id='fatture_disabilita_ricevute' value='1'";
-        if($checkbox_value == 1)
-            $html .= " checked";
-        $html .= ">";
-        
+        if ($checkbox_value == 1) {
+            $html .= ' checked';
+        }
+
+        $html .= '>';
+
         $checkbox_crea_ordine = Mage::helper('appfatturazione')->getConfig('fattura24/ordini/crea_ordine');
         $checkbox_crea_fattura = Mage::helper('appfatturazione')->getConfig('fattura24/fatture/crea_fattura');
         $javaScript = "
@@ -162,8 +164,9 @@ class Fattura24_AppFatturazione_Block_Adminhtml_System_Config_Form_CheckboxFattu
                                 
                 inizializza({$checkbox_crea_ordine}, {$checkbox_crea_fattura});
             </script>";
-        
+
         $html .= $javaScript;
+
         return $html;
     }
 }

@@ -6,9 +6,10 @@ class Fattura24_AppFatturazione_Model_Observer_CreateOrderObserver
     {
         $order = $observer->getEvent()->getOrder();
         $storeId = $order->getStoreId();
-        if(Mage::helper('appfatturazione')->getConfig('fattura24/ordini/crea_ordine', $storeId) == 1)
+        if (Mage::helper('appfatturazione')->getConfig('fattura24/ordini/crea_ordine', $storeId) == 1) {
             Mage::helper('appfatturazione')->saveDocument($order, 'ordine');
-        else if(Mage::helper('appfatturazione')->getConfig('fattura24/rubrica/salva_cliente', $storeId) == 1)
+        } elseif (Mage::helper('appfatturazione')->getConfig('fattura24/rubrica/salva_cliente', $storeId) == 1) {
             Mage::helper('appfatturazione')->saveCostumer($order);
+        }
     }
 }
