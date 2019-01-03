@@ -1,5 +1,5 @@
 {
-  "name": "fattura24/app-fatturazione",
+  "name": "fattura24/m1-app-fatturazione",
   "type": "magento-module",
   "description": "Official Magento 1 integration with fattura24.com",
   "authors": [
